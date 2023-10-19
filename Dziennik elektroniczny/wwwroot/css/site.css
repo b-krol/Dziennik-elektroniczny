@@ -1,3 +1,11 @@
+:root{
+  --main-basic-backgorund-color: #04081f;
+  --assistant-basic-background-color: #190628;
+  --main-basic-text-and-border-color: #dddddd;
+  --assistant-basic-text-and-border-color: #feef78;
+  --standarized-font-size-base: 1;
+}
+
 html {
   font-size: 14px;
 }
@@ -18,5 +26,30 @@ html {
 }
 
 body {
+  background-color:var(--main-basic-backgorund-color);
+  color:var(--main-basic-text-and-border-color);
+  font-size:calc(var(--standarized-font-size-base) * 2.5em);
   margin-bottom: 60px;
+}
+
+body.main-site{
+  margin: 0px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+div{
+  --lesson-box-border-width-base: 0.15em;
+  --standarized-border-radius-base: 10%;
+  --standarized-padding-value: 0.2em;
+}
+
+.lesson-box{
+  border-width: var(--lesson-box-border-width-base);
+  border-color: var(--main-basic-text-and-border-color);
+  border-style: solid;
+  border-radius: var(--standarized-border-radius-base);
+  padding: var(--standarized-padding-value);
 }
