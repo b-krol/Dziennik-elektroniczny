@@ -1,9 +1,12 @@
-:root{
+:root {
   --main-basic-backgorund-color: #04081f;
   --assistant-basic-background-color: #190628;
   --main-basic-text-and-border-color: #dddddd;
   --assistant-basic-text-and-border-color: #feef78;
   --standarized-font-size-base: 1;
+
+  --lesson-box-group-height: 80vh;
+  --lesson-box-group-width: 20vw;
 }
 
 html {
@@ -30,26 +33,37 @@ body {
   color:var(--main-basic-text-and-border-color);
   font-size:calc(var(--standarized-font-size-base) * 2.5em);
   margin-bottom: 60px;
+  overflow:hidden;
 }
 
 body.main-site{
   margin: 0px;
   position:absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
 }
 
 div{
   --lesson-box-border-width-base: 0.15em;
-  --standarized-border-radius-base: 10%;
+  --standarized-border-radius-base: 15px;
   --standarized-padding-value: 0.2em;
 }
 
-.lesson-box{
+.lesson-box-group {
+  top: calc((100vh - var(--lesson-box-group-height)) / 2);
+  left: calc((100vw - var(--lesson-box-group-width)) / 2);
+  position: absolute;
+  width: var(--lesson-box-group-width);
+  height: var(--lesson-box-group-height);
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+}
+
+.lesson-box {
+  position: relative;
   border-width: var(--lesson-box-border-width-base);
   border-color: var(--main-basic-text-and-border-color);
   border-style: solid;
   border-radius: var(--standarized-border-radius-base);
   padding: var(--standarized-padding-value);
+  width: var(--lesson-box-group-width);
 }
